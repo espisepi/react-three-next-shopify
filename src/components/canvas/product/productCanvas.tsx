@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, OrbitControls } from '@react-three/drei'
+import { Box, OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Product } from 'lib/shopify/types'
 import { Suspense } from 'react'
@@ -27,6 +27,16 @@ const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mo
 export default function ProductCanvas({ product }: { product: Product }) {
   console.log('Hello ProductCanvas Component')
   console.log(product)
+  //   const media = product.media
+  //   const [url] = media.sources
+  //     .filter((source) => source.mimeType.includes('model/gltf-binary'))
+  //     .map((source) => source.url)
+  //   console.log(url)
+  //@ts-ignore
+  const url = product.media.nodes[10].sources[0].url
+  console.log(url)
+  const gltf = useGLTF(url)
+  console.log(gltf)
   return (
     <>
       {/** @ts-ignore */}
@@ -34,6 +44,8 @@ export default function ProductCanvas({ product }: { product: Product }) {
         <Suspense fallback={null}>
           <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
           <Common color={'lightblue'} />
+          {/* @ts-ignore */}
+          <primitive object={gltf.scene} />
         </Suspense>
       </View>
     </>
