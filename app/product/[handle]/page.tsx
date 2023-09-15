@@ -11,8 +11,9 @@ import { HIDDEN_PRODUCT_TAG } from 'lib/constants'
 import { getProduct, getProductRecommendations } from 'lib/shopify'
 import { Image } from 'lib/shopify/types'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
-// const ProductCanvas = dynamic(() => import('components/canvas/product/productCanvas'), { ssr: false })
+const ProductCanvas = dynamic(() => import('@/components/canvas/product/productCanvas'), { ssr: false })
 
 // This Route Path:
 // http://localhost:3000/product/original-lenovo-lp40-pro-tws-earphones-wireless-bluetooth-5-1-sport-noise-reduction-headphones-touch-control-250mah-2022-new
@@ -102,10 +103,17 @@ export default async function ProductPage({ params }: { params: { handle: string
         </Suspense>
       </div>
       <h1>Hello World React-ThreeFiber</h1>
-      {/* <ProductCanvas product={product} /> */}
+      <ProductCanvas product={product} />
       {/* <Suspense>
         <Footer />
       </Suspense> */}
+      {/** @ts-ignore */}
+      {/* <View orbit className='relative h-full animate-bounce sm:h-48 sm:w-full'>
+        <Suspense fallback={null}>
+          <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
+          <Common color={'lightblue'} />
+        </Suspense>
+      </View> */}
     </>
   )
 }
