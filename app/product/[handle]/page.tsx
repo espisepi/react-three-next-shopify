@@ -21,7 +21,11 @@ const ProductCanvas = dynamic(() => import('@/components/canvas/product/productC
 export const runtime = 'edge'
 
 export async function generateMetadata({ params }: { params: { handle: string } }): Promise<Metadata> {
-  const product = await getProduct(params.handle)
+  // TODO: Descomentar para que busque el producto pasado por parametro
+  // const product = await getProduct(params.handle)
+  const product = await getProduct(
+    'original-lenovo-lp40-pro-tws-earphones-wireless-bluetooth-5-1-sport-noise-reduction-headphones-touch-control-250mah-2022-new',
+  )
 
   if (!product) return notFound()
 
@@ -55,8 +59,11 @@ export async function generateMetadata({ params }: { params: { handle: string } 
 }
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
-  const product = await getProduct(params.handle)
-
+  // TODO: Descomentar para que busque el producto pasado por parametro
+  // const product = await getProduct(params.handle)
+  const product = await getProduct(
+    'original-lenovo-lp40-pro-tws-earphones-wireless-bluetooth-5-1-sport-noise-reduction-headphones-touch-control-250mah-2022-new',
+  )
   console.log(product)
 
   if (!product) return notFound()
