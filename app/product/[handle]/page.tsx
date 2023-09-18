@@ -113,6 +113,9 @@ export default async function ProductPage({ params }: { params: { handle: string
       </div> */}
       <h1>Hello World React-ThreeFiber</h1>
       <ProductCanvas product={product} />
+      <div>
+        <pre>{JSON.stringify(product, null, 2)}</pre>
+      </div>
       {/* <Suspense>
         <Footer />
       </Suspense> */}
