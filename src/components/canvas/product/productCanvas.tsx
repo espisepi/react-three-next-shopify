@@ -42,7 +42,7 @@ export default function ProductCanvas({ product }: { product: Product }) {
       {/** @ts-ignore */}
       <View orbit className='relative h-full sm:h-48 sm:w-full'>
         <Suspense fallback={null}>
-          <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
+          {/* <Duck route='/blob' scale={2} position={[0, -1.6, 0]} /> */}
           <Common color={'lightblue'} />
           {/* @ts-ignore */}
           <primitive object={gltf.scene} />
