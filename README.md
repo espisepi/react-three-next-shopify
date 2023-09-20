@@ -10,3 +10,7 @@ Mix of:
 - NO (Lo voasel mejol en otro proyecto que empiece con un react-three-next como template y no lo mezclo con shopify para no liar la mundial) next-teslo udemy course (to use local mongodb database instead of shopify backend)
 
 This project was bootstrapped with [`create-r3f-app`](https://github.com/utsuboco/create-r3f-app)
+
+# List of TODOs
+
+- Crear escena ocean de background en todas las paginas de fondo threejs
