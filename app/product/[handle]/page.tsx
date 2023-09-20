@@ -64,7 +64,6 @@ export default async function ProductPage({ params }: { params: { handle: string
   const product = await getProduct(
     'original-lenovo-lp40-pro-tws-earphones-wireless-bluetooth-5-1-sport-noise-reduction-headphones-touch-control-250mah-2022-new',
   )
-  console.log(product)
 
   if (!product) return notFound()
 
