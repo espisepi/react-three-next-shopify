@@ -44,7 +44,7 @@ export default function Page() {
           {/** @ts-ignore */}
           <View className='flex h-96 w-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
-              <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
+              <Logo route='/product/test' scale={0.6} position={[0, 0, 0]} />
               {/** @ts-ignore */}
               <Common />
             </Suspense>
